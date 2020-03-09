@@ -7,7 +7,7 @@ Visto que escrever narrativas interativas é uma tarefa complexa por se ter a ne
 
 De acordo a pesquisa de mercado que foi realizada no que toca ao âmbito do projeto, foi verificado que existem ferramentas que possibilitam a criação de conteúdo interativo sem que necessite-se codificar. Ferramentas como: [1]Klynt, [2]Korsakow e [3]RacontR que permitem criar cenários interativos de forma geral, com a possibilidade de inserir diversos recursos de mídia como imagens e vídeos.
 
-Sendo assim, a diferença da ferramenta FANI para com as que foram mencionadas acima é que a FANI estará mais virada para criação de narrativas interativas por escrita, com formatos padrões de escrita conhecidos e tendo como o público alvo apenas roteiristas.
+Sendo assim, a diferença da ferramenta FANI para com as que foram mencionadas acima é que a plataforma FANI estará mais virada para criação de narrativas interativas por escrita, com formatos padrões de escrita conhecidos e tendo como o público alvo apenas roteiristas.
  
 
 
