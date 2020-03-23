@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>FANI</title>
+    <meta charset="UTF-8" />
+
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/editor.js"></script>
+
+    <link rel='stylesheet' href="style/jqueryFileTree.css" type="text/css" media="all" />
+    <link rel='stylesheet' href="stylesheets/bootstrap.min.css" type="text/css" media="all" />
+    <link rel='stylesheet' href="stylesheets/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <header>
+        <h1>FANI</h1>
+    </header>
+
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a href="#">Criar narrativa</a></li>
+        <li><a href="#">Suas narrativas</a></li>
+        <li><a href="#">Suas histórias</a></li>
+        
+    </ul>
+
+    <!-- Main -->
+    <div id="treeview">
+
+    </div>
+
+    <div id="editor" class="well">
+
+        <input type="hidden" id="nodeID" name="nodeID">
+
+        <label for="accao">Acção</label>
+        <input type="text" name="accao" id="accao" value="">
+
+        <label for="personagem">Personagem</label>
+        <input type="text" name="personagem" id="personagem" value="">
+
+        <label for="nodeDialog">Script</label>
+        <textarea id="nodeDialog" name="nodeDialog"></textarea>
+        <!--
+            <button type="submit" class="btn btn-primary" id="updateNode">Update Node</button>
+            <button type="submit" class="btn" id="createNode">Create Child Node</button>
+     -->
+        
+     <button type="button" >Nova passagem</button>
+     <button type="button" >Passagem filha</button>
+     <button type="button" >Salvar narrativa</button>
+     <!--
+         <div class="btn-group dropup pull-right">
+            <button class="btn dropdown-toggle btn-danger" data-toggle="dropdown">Delete Node &nbsp; <span
+                    class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#" id="deleteConfirm">Confirm</a></li>
+            </ul>
+        </div>
+
+     -->
+        
+
+        <br>
+        <p class="text-info" id="status"></p>
+
+    </div>
+   
+</body>
+
+</html>
