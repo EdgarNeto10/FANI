@@ -1,0 +1,36 @@
+
+#logo{ 
+    max-width: 200px; 
+    max-height: 100px 
+}
+
+.nav {
+    margin-bottom: 0px;
+    margin-top: 0px;  
+}
+
+.nav-tabs .active a, .nav-tabs .active a:hover {
+    background: #EFEFEF;
+}
+
+#narr li {
+
+    background-color: rgba(35, 117, 150, 0.795);
+    border: 1px solid;
+    padding: 50px;
+    max-width: 100px; 
+    max-height: 100px ;
+    margin-top: 15px;
+    list-style: none;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin-right: 25px;
+    flex: 1;
+    
+}
+
+#narr {
+    display:flex; 
+}
+
