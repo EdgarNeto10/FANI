@@ -13,11 +13,13 @@ var node2_out
 window.onload = function () {
     linker = $('#linker').linker();
     // NovaPassagemTeste()
+    
 }
 
 
 
 //-------Functions--------------//
+
 
 
 function NovaPassagem() {
