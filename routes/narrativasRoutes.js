@@ -15,6 +15,17 @@ router.get('/', function (req, res, next) { // Lê todas narrativas
   }, next)
 })
 
+router.post('/', function (req, res, next) { // Insere toda narrativa 
+  var data = req.body;
+  console.log(data);
+   narrativasDAO.saveNarrativas( data.narrativa, data.personagem,data.nodeDialog,data.accao,
+    function (err,result) {
+      res.send(result);
+    })
+
+});
+
+
 /*
 router.get('/:idAtleta', function (req, res, next) { // Lê todos treinos relacionados a um atleta
 

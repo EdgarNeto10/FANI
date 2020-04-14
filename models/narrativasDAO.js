@@ -23,6 +23,25 @@ module.exports.getAllNarrativas = function (callback, next) {
     })
 }
 
+module.exports.saveNarrativas = function (NomeNarrativa,personagem, script, accao, callback) {
+    pool.getConnection(function (err, conn) {
+        if (err) {
+            callback(err, { code: 500, status: "Error in the connection to the database" })
+            return;
+        }
+        conn.query('insert into Narrativa (Narr_nome,Narr_personagem, Narr_script, Narr_accao) values(?,?,?,?)', [NomeNarrativa,personagem, script, accao], function (err, results) {
+
+            conn.release();
+            if (err) {
+                callback(err, { code: 500, status: "Error in a database query" })
+                return;
+            }
+            callback(false, { code: 200, status: "ok", data: results })
+        })
+    })
+
+
+}
 
 
 /*
