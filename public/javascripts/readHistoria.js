@@ -8,6 +8,7 @@ window.onload = function () {
     interact = document.getElementById('interact')
     // NovaPassagemTeste()
     // TestarGravaçãoLocal();
+     readHistorias()
     
 }
 
@@ -18,6 +19,7 @@ function setIdPassagem(Idpassagem){
     window.sessionStorage.setItem('Idpassagem',Idpassagem);
    // window.location.href='../Treino.html';
    InteractAction();
+  
 
 }
 
