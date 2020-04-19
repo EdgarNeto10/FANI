@@ -26,10 +26,10 @@ router.post('/', function (req, res, next) { // Insere toda narrativa
 });
 
 
-/*
-router.get('/:idAtleta', function (req, res, next) { // Lê todos treinos relacionados a um atleta
 
-  treinosDAO.getTreinos(req.params.idAtleta, function (err, result) {
+router.get('/:idPassagem', function (req, res, next) { 
+
+  narrativasDAO.getPassagem(req.params.idPassagem, function (err, result) {
     if (err) {
       res.status(result.code).json(err);
       return;
@@ -38,7 +38,7 @@ router.get('/:idAtleta', function (req, res, next) { // Lê todos treinos relaci
   }, next)
 })
 
-
+/*
 
 router.put('/:idTreino', function (req, res, next) { // Faz o update de um determinado treino
 

@@ -43,6 +43,26 @@ module.exports.saveNarrativas = function (NomeNarrativa,personagem, script, acca
 
 }
 
+module.exports.getPassagem = function (idPassagem, callback, next) {
+    pool.getConnection(function (err, conn) {
+        if (err) {
+            callback(err, { code: 500, status: "Error in the connection to the database" })
+            return;
+        }
+        conn.query("select Narr_id, Narr_personagem, Narr_script, Narr_accao  from  Narrativa where Narr_id=?",
+            [idPassagem], function (err, results) {
+
+                conn.release();
+                if (err) {
+                    callback(err, { code: 500, status: "Error in a database query" })
+                    return;
+                }
+                callback(false, { code: 200, status: "ok", data: results })
+            })
+
+    })
+}
+
 
 /*
 // Funções temporarias para testes
@@ -63,25 +83,6 @@ module.exports.updateTreinos = function (idTreino, newestado, callback) {
 }
 
 
-module.exports.getTreinos = function (idAtleta, callback, next) {
-    pool.getConnection(function (err, conn) {
-        if (err) {
-            callback(err, { code: 500, status: "Error in the connection to the database" })
-            return;
-        }
-        conn.query("select treino_id,treino_tipo,treino_estado,DATE_FORMAT(treino_data,'%d/%m/%Y') as date,atleta_id,atleta_nome,atleta_atle_trein from  treino t join Atle_Trein a on  t.treino_id = a.treino_atle_trein join Atleta x on a.atleta_atle_trein = x.atleta_id where atleta_atle_trein=?",
-            [idAtleta], function (err, results) {
-
-                conn.release();
-                if (err) {
-                    callback(err, { code: 500, status: "Error in a database query" })
-                    return;
-                }
-                callback(false, { code: 200, status: "ok", data: results })
-            })
-
-    })
-}
 
 */
 

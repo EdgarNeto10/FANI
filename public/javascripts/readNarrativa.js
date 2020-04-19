@@ -9,12 +9,15 @@ var node1_out;
 var node2;
 var node2_in;
 var node2_out
+var Nnarr
 //--------------------------------------//
 window.onload = function () {
+    Nnarr= document.getElementById('Nnarr')
     linker = $('#linker').linker();
-    // NovaPassagemTeste()
+     //NovaPassagemTeste()
     // TestarGravaçãoLocal();
     readNarrativas();
+  
 }
 
 
@@ -104,8 +107,10 @@ function readNarrativas() {
 }
 
 
-// Função para teste locais 
 
+
+// Função para teste locais 
+/*
 var litest = []
 
 litest = [{inpt1:'ola', inpt2:'dicaprio', outpt:'foi preso'},{inpt1:'ola', inpt2:'dicaprio', outpt:'foi preso na'}]
@@ -175,3 +180,4 @@ for (i in litest) {
 
 }}
 
+*/

@@ -13,7 +13,7 @@
     background: #EFEFEF;
 }
 
-#narr li {
+#Nnarr li {
 
     background-color: rgba(190, 221, 233, 0.795);
     border: 5px solid;
@@ -31,8 +31,54 @@
     
 }
 
-#narr {
+#Nnarr {
     display:flex;
     
 }
 
+#Nhist li {
+
+    background-color: rgba(190, 221, 233, 0.795);
+    border: 5px solid;
+    border-color: rgb(135, 182, 252);
+    padding: 50px;
+    max-width: 100px; 
+    max-height: 100px ;
+    margin-top: 15px;
+    list-style: none;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin-right: 25px;
+    flex: 1;
+    
+}
+
+#Nhist {
+    display:flex;
+    
+}
+
+#interact{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+    
+}
+
+#interact p{
+   background-color: rgb(215, 215, 248);
+   padding: 10px;
+ 
+  
+    
+
+    
+}
+
+#interagir{
+    text-align: center;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

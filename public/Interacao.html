@@ -7,20 +7,20 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="./stylesheets/historico.css">
-    <script src="./javascripts/readNarrativaGravadas.js"></script>
+    <script src="./javascripts/readHistoria.js"></script>
 
 
     <!-- Biblioteca -->
     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-   
-
+    <script src="./bib-linker/linker.min.js"></script>
+ 
 
 </head>
 
 <body>
     <header>
         <img id='logo' src="./images/faniLogo.png" alt="faniLogo">
-    </header>
+     </header>
 
     <!--Navegação/Pages -->
 
@@ -30,16 +30,15 @@
         <li><a href="SuasHistorias.html">Suas histórias</a></li>
     </ul>
 
-    <!-- Main -> Lista de Narrativas-->
-    <ul id="Nnarr">
-        
-        
-    </ul>
+    <!-- Main  -->
+    <input type="button" onclick="readHistorias()" value="Testar histórias">
+    <p id="interagir"></p>
+    <p id="interact"></p>
 
 
 
 
-
+    
 </body>
 
 </html>

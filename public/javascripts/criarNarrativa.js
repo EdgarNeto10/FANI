@@ -14,14 +14,19 @@ var accao;
 var nodeDialog;
 var narrSave  = [];
 var NarrNome;
+var node;
 //--------------------------------------//
 window.onload = function () {
-    linker = $('#linker').linker();
+    
     // NovaPassagemTeste()
     personagem = document.getElementById('personagem')
     accao = document.getElementById('accao')
     nodeDialog = document.getElementById('nodeDialog')
+    node = document.getElementById('test')
 
+    document.getElementById("linker").addEventListener("click", alertt);
+    var idnode = 'linker'
+    linker = $('#'+idnode).linker()
 
 }
 
@@ -32,12 +37,33 @@ window.onload = function () {
 
 
 
-
+var c=0
+var idnodes;
 function NovaPassagem() {
+    /*
+    var idnode = 'linker'
+   
+
+    c=c+1
+    if(c==1){
+        linker = $('#'+idnode).linker();
+        document.getElementById(idnode).setAttribute('id', idnode+c);
+        alert(idnode+c)
+        idnodes=idnode+c
+    }
+    else{
+        document.getElementById(idnodes).setAttribute('id', idnodes+c);
+         idnodes=idnodes+c
+        linker = $('#'+idnodes).linker();
+        alert(idnodes)
+    }
+   */
+
     n = n + 1
     // add a node
-    node1 = linker.node({ id: 'first', name: [n] + 'º Passagem', x: 10, y: 190 });
+    node1 = linker.node({ id: 'node_'+[n], name: [n] + 'º Passagem', x: 10, y: 190 });
     console.log(this);
+    console.log(node1.id);
 
     // when the node position change
     node1.onDrag = function (x, y) {
@@ -80,6 +106,7 @@ function NovaPassagem() {
 }
 
 
+function alertt(){alert(node1[n].id)}
 
 function Passagemfilha() {
     f = f + 1
