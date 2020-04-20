@@ -38,10 +38,12 @@ function readHistorias() {
             var html = ''
             var htm = ''
             for (i in listnarr) {
-                if(listnarr[i].Narr_accao == listnarr[0].Narr_accao ) 
-                html += "<p>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</p>";
-                else
-                htm += "<p style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[i].Narr_id+");' >"+listnarr[i].Narr_accao+"</p>";
+                if(listnarr[i].Narr_accao == listnarr[0].Narr_accao ) {
+                    html += "<p>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</p>";
+                }
+                else{
+                     htm += "<p style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[i].Narr_id+");' >"+listnarr[i].Narr_accao+"</p>";
+                    }
                 //html += "<p onclick='setIdTreino("+treinar[i].treino_id+");' style='cursor: pointer;'>" +treinar[i].date+ ' - ' + treinar[i].treino_tipo + "</p>";
             }
 
