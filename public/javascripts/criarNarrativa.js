@@ -15,6 +15,9 @@ var nodeDialog;
 var narrSave  = [];
 var NarrNome;
 var node;
+var nos_out;
+var idOutput;
+var node1_ou;
 //--------------------------------------//
 window.onload = function () {
     
@@ -24,42 +27,25 @@ window.onload = function () {
     nodeDialog = document.getElementById('nodeDialog')
     node = document.getElementById('test')
 
-    document.getElementById("linker").addEventListener("click", alertt);
     var idnode = 'linker'
     linker = $('#'+idnode).linker()
+   
 
 }
 
 
 
 //-------Functions--------------//
+  
 
 
-
-
-var c=0
+var ide=0;
+var c1=0
 var idnodes;
+var listn=[]
 function NovaPassagem() {
-    /*
-    var idnode = 'linker'
-   
-
-    c=c+1
-    if(c==1){
-        linker = $('#'+idnode).linker();
-        document.getElementById(idnode).setAttribute('id', idnode+c);
-        alert(idnode+c)
-        idnodes=idnode+c
-    }
-    else{
-        document.getElementById(idnodes).setAttribute('id', idnodes+c);
-         idnodes=idnodes+c
-        linker = $('#'+idnodes).linker();
-        alert(idnodes)
-    }
-   */
-
     n = n + 1
+    //window.sessionStorage.setItem('IdOutput','output'+n);
     // add a node
     node1 = linker.node({ id: 'node_'+[n], name: [n] + 'º Passagem', x: 10, y: 190 });
     console.log(this);
@@ -68,6 +54,7 @@ function NovaPassagem() {
     // when the node position change
     node1.onDrag = function (x, y) {
         console.log(x, y, this); // print the new position and the node object
+        
     };
 
     // trigger when delete the node
@@ -78,20 +65,48 @@ function NovaPassagem() {
     // trigger when setting icon clicked
     node1.onSetting = function () {
         alert('Setting ' + this.name);
+        
     };
+
 
     // add an input
     node1.input('input_id', personagem.value);
     node1.input('input_id', nodeDialog.value);
 
     // add an output
-    node1_out = node1.output('output_id', accao.value);
-
+   
+   
+   
+    node1_out = node1.output( c1, accao.value);
+  
+    // Interagir com node clicado
+  
+    node1.onClick =  function () {
+        /* Alertas para identificar o inputs e outputs
+                alert( this.inputs[0].name);
+                alert( this.inputs[1].name);
+                alert( this.outputs[0].name);
+        */ 
+   
+               window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
+              
+               
+               //alert( this.outputs[0].id);   
+               //Id para detetar o click no node1           
+               ide=0
+                
+            };
+           
+    
+             
+   
     // trigger when this output connect to new input
 
     node1_out.onConnect = function (input) {
         console.log(this, input); // print the output and the input objects
-
+        //alert(this, input)
+       // alert(node1.pathsOut) 
+      
     };
 
 
@@ -105,26 +120,58 @@ function NovaPassagem() {
 
 }
 
-
-function alertt(){alert(node1[n].id)}
+var c2=0
 
 function Passagemfilha() {
+   
     f = f + 1
     p = 130 + p
+    idec = sessionStorage.getItem('Ide');
     // add node 2
+    
     node2 = linker.node({ id: 'second', name: [n] + '.' + [f] + ' Passagem', x: 400, y: p });
     node2_in = node2.input('input_id', personagem.value);
     node2_in = node2.input('input_id', nodeDialog.value);
 
     // add an output
-    node2_out = node2.output('output_id', accao.value);
+    node2_out = node2.output(c2, accao.value);
 
+   
+    //Os nodes_outs seram intruduzidos nesta lista
+    listn.push(node2_out) 
+
+    c2=c2+1
     node2.onSetting = function () {
         alert('Setting ' + this.name);
     };
 
+
+    //alert( idOutput)
+
+    console.log(node2.pathsOut)
+
+    
+
+    node2.onClick =  function () {
+       
+   
+               window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
+            
+               //alert( this.outputs[0].id); 
+             //Id para detetar o click no node1              
+               ide=1
+               window.sessionStorage.setItem('Ide',ide);
+                
+            };
+
+    idOutput = sessionStorage.getItem('IdOutput');
+
     // add path between two nodes
-    node1_out.connect(node2_in);
+    if (ide==0)
+        node1_out.connect(node2_in);   
+    else
+        listn[idOutput].connect(node2_in);
+   
 
     narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value})
 }
