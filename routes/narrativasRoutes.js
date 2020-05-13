@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) { // Lê todas narrativas
 router.post('/', function (req, res, next) { // Insere toda narrativa 
   var data = req.body;
   console.log(data);
-   narrativasDAO.saveNarrativas( data.narrativa, data.personagem,data.nodeDialog,data.accao,
+   narrativasDAO.saveNarrativas( data.narrid,data.narrativa, data.personagem,data.nodeDialog,data.accao,data.outId,data.outConId,
     function (err,result) {
       res.send(result);
     })

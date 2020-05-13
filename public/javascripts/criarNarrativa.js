@@ -89,11 +89,12 @@ function NovaPassagem() {
         */ 
    
                window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
-              
+               window.sessionStorage.setItem('IdOutputcon',this.outputs[0].__id);
                
                //alert( this.outputs[0].id);   
                //Id para detetar o click no node1           
                ide=0
+               alert( this.outputs[0].__id);
                 
             };
            
@@ -114,9 +115,10 @@ function NovaPassagem() {
     node1_out.onRemove = function (index) {
         console.log(index)
     };
-
-    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value})
-
+    outI=node1.outputs[0].__id
+    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId: outI, outConId: '1' ,})
+   
+    console.log(node1.pathsOut)
 
 }
 
@@ -126,12 +128,15 @@ function Passagemfilha() {
    
     f = f + 1
     p = 130 + p
-    idec = sessionStorage.getItem('Ide');
+    //idec = sessionStorage.getItem('Ide');
+
+    outputcon = sessionStorage.getItem('IdOutputcon')
     // add node 2
     
     node2 = linker.node({ id: 'second', name: [n] + '.' + [f] + ' Passagem', x: 400, y: p });
     node2_in = node2.input('input_id', personagem.value);
-    node2_in = node2.input('input_id', nodeDialog.value);
+    node2_in = node2.input(outputcon, nodeDialog.value);
+
 
     // add an output
     node2_out = node2.output(c2, accao.value);
@@ -149,6 +154,7 @@ function Passagemfilha() {
     //alert( idOutput)
 
     console.log(node2.pathsOut)
+    console.log(node2.pathsIn)
 
     
 
@@ -156,11 +162,15 @@ function Passagemfilha() {
        
    
                window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
+               window.sessionStorage.setItem('IdOutputcon',this.outputs[0].__id);
             
                //alert( this.outputs[0].id); 
              //Id para detetar o click no node1              
                ide=1
-               window.sessionStorage.setItem('Ide',ide);
+               //window.sessionStorage.setItem('Ide',ide);
+               alert(this.inputs[1].id)
+              // alert(sessionStorage.getItem('IdOutputcon'))
+               
                 
             };
 
@@ -172,8 +182,10 @@ function Passagemfilha() {
     else
         listn[idOutput].connect(node2_in);
    
-
-    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value})
+        alert(node2.outputs[0].__id)
+        
+    outI=node2.outputs[0].__id
+    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId :outI , outConId:  outputcon ,})
 }
 
 function NomeNarrativa() {
@@ -184,6 +196,7 @@ function NomeNarrativa() {
     }
   }
 
+  var narrid=Math.random()
 function SalvarNarrativa(){
     NomeNarrativa();
     for(i in narrSave ){
@@ -195,7 +208,11 @@ function SalvarNarrativa(){
             narrativa: NarrNome,
             personagem: narrSave[i].inpt1,
             nodeDialog: narrSave[i].inpt2,
-            accao: narrSave[i].outpt
+            accao: narrSave[i].outpt,
+            outId: narrSave[i].outId ,
+            outConId: narrSave[i].outConId,
+            narrid:narrid
+
 
         },
         success: function (res, status) {
@@ -213,6 +230,8 @@ console.log(narrSave)
 console.log(NarrNome)
 
 }
+
+
 
 
 /*

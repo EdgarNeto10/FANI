@@ -15,6 +15,7 @@
     <script src="./Bib-Link/linker.js"></script>
     <link rel="stylesheet" href="./Bib-Link/linker.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -28,13 +29,14 @@
         <li><a href="./index.html">Criar narrativa</a></li>
         <li><a href="SuasNarrativas.html">Suas narrativas</a></li>
         <li><a href="SuasHistorias.html">Suas histórias</a></li>
+        
     </ul>
+   
     <!-- Main -> Local para os nodes -->
 
     <div id="linker" ></div>
 
-   
-
+  
 
     <!--Formulário -->
 
@@ -53,11 +55,104 @@
         <button type="button" onclick="NovaPassagem()">Criar nova passagem</button>
         <button type="button" onclick="Passagemfilha()">Passagem filha</button>
         <button type="button" onclick=" SalvarNarrativa()">Salvar narrativa</button>
-        <p id="demo" style="color: rgb(93, 150, 7);"> </p>
-       <!-- <input type="button" id="form" value="Mekie">-->
         
- 
-   
+        <!--Instruções-->
+        <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+            
+            /* The Modal (background) */
+            .modal {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 1; /* Sit on top */
+              padding: 200px; /* Location of the box */   
+              left:0;
+              top: 0;
+              width: 95%; /* Full width */
+              height: 100%; /* Full height */
+              overflow: auto; /* Enable scroll if needed */
+               /* Fallback color */
+              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+            
+            /* Modal Content */
+            .modal-content {
+              background-color: #fefefe;
+              margin: auto;
+              padding: 20px;
+              border: 1px solid #888;
+              width: 50%;
+            }
+            
+            /* The Close Button */
+            .close {
+              color: #aaaaaa;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+              color: #000;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            </style>            
+            
+            <!-- Trigger/Open The Modal -->
+            
+            
+            <i id="myBtn" class="fa fa-question-circle" style="font-size:22px" ></i>
+            
+            <!-- The Modal -->
+            <div id="myModal"  class="modal">
+            
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>
+                   <h1 style="color: rgb(102, 186, 224);text-align: center;" >Instruções</h1> 
+                   <p> <b> 1- </b> Para inserir dados a uma nova passagem ou passagem filha deve preencher o formulário à direita “Escrever narrativa ”</p>
+                    
+                   <p><b> 2- </b> Para adicionar uma nova passagem de clicar em criar uma nova passagem.</p> 
+                    
+                   <p><b> 3- </b> Para adicionar uma passagem filha deve clicar primeiro no “node” que pretende expandir e de seguida clicar em passagem filha.</p>
+                    
+                   <p><b> 4- </b> Para guardar a narrativa deve clicar em salvar a narrativa e adicionar um nome para mesma. </p>
+                </p>
+              </div>
+        
+            </div>
+            
+            <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+            </script>
+    
 
     </div>
 

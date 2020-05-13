@@ -23,13 +23,13 @@ module.exports.getAllNarrativas = function (callback, next) {
     })
 }
 
-module.exports.saveNarrativas = function (NomeNarrativa,personagem, script, accao, callback) {
+module.exports.saveNarrativas = function (Narr_id_id,NomeNarrativa,personagem, script, accao,Narr_out_id,Narr_outCon_id, callback) {
     pool.getConnection(function (err, conn) {
         if (err) {
             callback(err, { code: 500, status: "Error in the connection to the database" })
             return;
         }
-        conn.query('insert into Narrativa (Narr_nome,Narr_personagem, Narr_script, Narr_accao) values(?,?,?,?)', [NomeNarrativa,personagem, script, accao], function (err, results) {
+        conn.query('insert into Narrativa (Narr_id_id,Narr_nome,Narr_personagem, Narr_script, Narr_accao, Narr_out_id, Narr_outCon_id) values(?,?,?,?,?,?,?)', [Narr_id_id,NomeNarrativa,personagem, script, accao,Narr_out_id,Narr_outCon_id], function (err, results) {
 
             conn.release();
             if (err) {
@@ -49,7 +49,7 @@ module.exports.getPassagem = function (idPassagem, callback, next) {
             callback(err, { code: 500, status: "Error in the connection to the database" })
             return;
         }
-        conn.query("select Narr_id, Narr_personagem, Narr_script, Narr_accao  from  Narrativa where Narr_id=?",
+        conn.query("select Narr_id_id,Narr_nome, Narr_id, Narr_personagem, Narr_script, Narr_accao, Narr_out_id, Narr_outCon_id  FROM  Narrativa  where Narr_id_id=?",
             [idPassagem], function (err, results) {
 
                 conn.release();

@@ -13,7 +13,6 @@ var Nnarr
 var Nhist
 //--------------------------------------//
 window.onload = function () {
-    Nnarr= document.getElementById('Nnarr')
     Nhist= document.getElementById('Nhist')
     readNamesHist()
 }
@@ -22,11 +21,13 @@ window.onload = function () {
 
 //-------Functions--------------//
 
-
-
-function pagesH(){
+function pagesH(Narrid){ 
     window.location.href='../Interacao.html';
+    window.sessionStorage.setItem('Narrid',Narrid);
+   
 }
+
+
 
 var c = 0
 var nome;
@@ -42,11 +43,11 @@ function readNamesHist(){
             for (i in listnarr) {
             c=c+1
             if(c==1){
-                html += "<li onclick=pagesH() >"+listnarr[i].Narr_nome+"</li>";
+                html += "<li onclick=' pagesH("+listnarr[i].Narr_id_id+") '>"+listnarr[i].Narr_nome+"</li>";
             }
             else {
                 if(listnarr[i].Narr_nome != nome){
-                    html += "<li onclick=pagesH() >"+listnarr[i].Narr_nome+"</li>";
+                    html += "<li onclick=pagesH("+listnarr[i].Narr_id_id+") >"+listnarr[i].Narr_nome+"</li>";
                 }
             }
              nome =listnarr[i].Narr_nome
@@ -62,6 +63,6 @@ function readNamesHist(){
 
         }
     })
-
 }
+
 

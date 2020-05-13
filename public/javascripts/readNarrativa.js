@@ -10,6 +10,7 @@ var node2;
 var node2_in;
 var node2_out
 var Nnarr
+//var listnarr = []
 //--------------------------------------//
 window.onload = function () {
     Nnarr= document.getElementById('Nnarr')
@@ -27,13 +28,26 @@ window.onload = function () {
 
 function readNarrativas() {
     $.ajax({
-        url: '/api/narrativas',
+        url: '/api/narrativas/'+sessionStorage.getItem('Narrid'),
         method: 'get',
         contentType: "application/json", // sending in json
         dataType: "json",// receiving in json
         success: function (res, status) {
             listnarr= res
-           
+            /* Verificar o primeiro elemento //
+            
+            for (n in listnar){
+                if(listnar[n].Narr_outCon_id=='1'){
+                    listnarr.push(listnar[n])
+                }
+            }
+            for (nn in listnar){
+                if(listnar[nn].Narr_outCon_id != '1'){
+                listnarr.push(listnar[nn])
+            }
+        }
+        */
+        //console.log(listnarr)
             for (i in listnarr) {
                 if(listnarr[i]==listnarr[0]){
                     n = n + 1
@@ -76,8 +90,11 @@ function readNarrativas() {
                         console.log(index)
                     };
                     }
-                
                    if(listnarr[i]!=listnarr[0]){ 
+                   for (j in listnarr){
+                  
+                    //alert(narrout)
+                    if(listnarr[j].Narr_outCon_id==narrout){
                     f = f + 1
                     p= 130 + p
                     // add node 2
@@ -93,11 +110,21 @@ function readNarrativas() {
                     };
                 
                     // add path between two nodes
+                    
                     node1_out.connect(node2_in);
                 }
                 
                 }
-         
+                
+          
+            
+            }
+                var narrout = listnarr[i].Narr_out_id 
+                 
+            }
+            var outCon = listnarr[i].Narr_outCon_id 
+            alert(outCon)
+              
         },
         error: function () {
 
@@ -181,3 +208,4 @@ for (i in litest) {
 }}
 
 */
+

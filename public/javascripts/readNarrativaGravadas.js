@@ -16,20 +16,20 @@ window.onload = function () {
     Nnarr= document.getElementById('Nnarr')
     Nhist= document.getElementById('Nhist')
     readNamesNarrativas()
-    readNamesHist()
+    
 }
 
 
 
 //-------Functions--------------//
 
-function pagesN(){
+function pagesN(Narrid){ 
     window.location.href='../EditNarrativa.html';
+    window.sessionStorage.setItem('Narrid',Narrid);
+   
 }
 
-function pagesH(){
-    window.location.href='../Interacao.html';
-}
+
 
 var c = 0
 var nome;
@@ -45,11 +45,11 @@ function readNamesNarrativas(){
             for (i in listnarr) {
             c=c+1
             if(c==1){
-                html += "<li onclick=pagesN() >"+listnarr[i].Narr_nome+"</li>";
+                html += "<li onclick=' pagesN("+listnarr[i].Narr_id_id+") '>"+listnarr[i].Narr_nome+"</li>";
             }
             else {
                 if(listnarr[i].Narr_nome != nome){
-                    html += "<li onclick=pagesN() >"+listnarr[i].Narr_nome+"</li>";
+                    html += "<li onclick=pagesN("+listnarr[i].Narr_id_id+") >"+listnarr[i].Narr_nome+"</li>";
                 }
             }
              nome =listnarr[i].Narr_nome
@@ -68,40 +68,4 @@ function readNamesNarrativas(){
 }
 
 
-var c = 0
-var nome;
-function readNamesHist(){
-    $.ajax({
-        url: '/api/narrativas',
-        method: 'get',
-        contentType: "application/json", // sending in json
-        dataType: "json",// receiving in json
-        success: function (res, status) {
-            listnarr= res
-            var html = ''
-            for (i in listnarr) {
-            c=c+1
-            if(c==1){
-                html += "<li onclick=pagesH() >"+listnarr[i].Narr_nome+"</li>";
-            }
-            else {
-                if(listnarr[i].Narr_nome != nome){
-                    html += "<li onclick=pagesH() >"+listnarr[i].Narr_nome+"</li>";
-                }
-            }
-             nome =listnarr[i].Narr_nome
-                
-               
-            }
-
-           Nhist.innerHTML = html;
-     
-         
-        },
-        error: function () {
-
-        }
-    })
-
-}
 
