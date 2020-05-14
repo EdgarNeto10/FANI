@@ -24,6 +24,8 @@ window.onload = function () {
 function pagesH(Narrid){ 
     window.location.href='../Interacao.html';
     window.sessionStorage.setItem('Narrid',Narrid);
+    window.sessionStorage.setItem('nomeN',nome)
+
    
 }
 
@@ -51,12 +53,12 @@ function readNamesHist(){
                 }
             }
              nome =listnarr[i].Narr_nome
-                
+            
                
             }
 
            Nhist.innerHTML = html;
-     
+          
          
         },
         error: function () {

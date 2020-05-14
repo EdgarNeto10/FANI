@@ -94,7 +94,7 @@ function NovaPassagem() {
                //alert( this.outputs[0].id);   
                //Id para detetar o click no node1           
                ide=0
-               alert( this.outputs[0].__id);
+              // alert( this.outputs[0].__id);
                 
             };
            
@@ -168,7 +168,7 @@ function Passagemfilha() {
              //Id para detetar o click no node1              
                ide=1
                //window.sessionStorage.setItem('Ide',ide);
-               alert(this.inputs[1].id)
+              // alert(this.inputs[1].id)
               // alert(sessionStorage.getItem('IdOutputcon'))
                
                 
@@ -182,7 +182,7 @@ function Passagemfilha() {
     else
         listn[idOutput].connect(node2_in);
    
-        alert(node2.outputs[0].__id)
+       // alert(node2.outputs[0].__id)
         
     outI=node2.outputs[0].__id
     narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId :outI , outConId:  outputcon ,})

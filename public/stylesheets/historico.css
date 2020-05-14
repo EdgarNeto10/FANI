@@ -67,7 +67,7 @@
     
 }
 
-#interact p{
+#interact  td{
    background-color: rgb(215, 215, 248);
    padding: 10px;
  
@@ -84,9 +84,9 @@
 }
 
 
-#myCanvas{
-     text-align: center;
-     margin-top: 15px;
-
-
+table, th, td {
+  border: 2px solid black;
 }
+
+
+

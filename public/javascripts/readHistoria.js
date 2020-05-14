@@ -5,10 +5,12 @@ var interact ;
 var listnarr=[] ;
 var outId;
 var outIdd;
+var nomeNA
 //--------------------------------------//
 window.onload = function () {
     interagir = document.getElementById('interagir')
     interact = document.getElementById('interact')
+    nomeNA = document.getElementById('nomeNA')
     // NovaPassagemTeste()
     // TestarGravaçãoLocal();
      readHistorias()
@@ -43,11 +45,11 @@ function readHistorias() {
         console.log(listnarr)
             for (i in listnarr) {
                     if([i]==0){
-                       html += "<p>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</p>";
+                       html += "<td>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</td>";
                        outId = listnarr[i].Narr_out_id
                     }
                     if(listnarr[i].Narr_outCon_id==outId){
-                       htm += "<p style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[i].Narr_id+");' >"+listnarr[i].Narr_accao+"</p>";
+                       htm += "<td style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[i].Narr_id+");' >"+listnarr[i].Narr_accao+"</td>";
                     }
                 }
                
@@ -55,6 +57,7 @@ function readHistorias() {
 
            interagir.innerHTML = html;
            interact.innerHTML = htm;
+           nomeNA.innerHTML = sessionStorage.getItem('nomeN')
          
         },
         error: function () {
@@ -69,7 +72,7 @@ function setIdPassagem(Idpassagem){
     var htm = ''
     for (i in listnarr) {
         if(listnarr[i].Narr_id==Idpassagem){
-           html += "<p>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</p>";
+            html += "<td>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</td>";
            outIdd = listnarr[i].Narr_out_id
            //alert(outIdd)
         }
@@ -79,7 +82,7 @@ function setIdPassagem(Idpassagem){
         if(listnarr[j].Narr_outCon_id==outIdd){
            // alert(outIdd)
            // alert(listnarr[i].Narr_accao)
-            htm += "<p style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[j].Narr_id+");' >"+listnarr[j].Narr_accao+"</p>";
+           htm += "<td style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[i].Narr_id+");' >"+listnarr[i].Narr_accao+"</td>";
         }
 
 
