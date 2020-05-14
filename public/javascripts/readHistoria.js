@@ -75,18 +75,20 @@ function setIdPassagem(Idpassagem){
             html += "<td>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</td>";
            outIdd = listnarr[i].Narr_out_id
            //alert(outIdd)
+
+          
         }
-       
     }
     for(j in listnarr){
         if(listnarr[j].Narr_outCon_id==outIdd){
            // alert(outIdd)
            // alert(listnarr[i].Narr_accao)
-           htm += "<td style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[i].Narr_id+");' >"+listnarr[i].Narr_accao+"</td>";
+           htm += "<td style='cursor: pointer;' onclick='setIdPassagem("+ listnarr[j].Narr_id+");' >"+listnarr[j].Narr_accao+"</td>";
         }
 
 
     }
+    alert(outIdd)
 
     interagir.innerHTML = html;
     interact.innerHTML = htm;
