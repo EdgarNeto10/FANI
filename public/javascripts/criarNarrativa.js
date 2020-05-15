@@ -18,6 +18,7 @@ var node;
 var nos_out;
 var idOutput;
 var node1_ou;
+var posicao=0
 //--------------------------------------//
 window.onload = function () {
     
@@ -132,12 +133,24 @@ function Passagemfilha() {
 
     outputcon = sessionStorage.getItem('IdOutputcon')
     // add node 2
-    
+    if(f==1){
     node2 = linker.node({ id: 'second', name: [n] + '.' + [f] + ' Passagem', x: 400, y: p });
-    node2_in = node2.input('input_id', personagem.value);
+    }
+    if(f!=1){
+    if(sessionStorage.getItem('posx')==posicao){
+    node2 = linker.node({ id: 'second', name: [n] + '.' + [f] + ' Passagem', x: posicao+300, y: p });
+    }
+    if(sessionStorage.getItem('posx')!= posicao){
+    node2 = linker.node({ id: 'second', name: [n] + '.' + [f] + ' Passagem', x: posicao, y: p });
+     }
+
+    }
+
     node2_in = node2.input(outputcon, nodeDialog.value);
+    node2_in = node2.input('input_id', personagem.value);
 
-
+    alert(node2.x)
+    posicao = node2.x
     // add an output
     node2_out = node2.output(c2, accao.value);
 
@@ -170,7 +183,8 @@ function Passagemfilha() {
                //window.sessionStorage.setItem('Ide',ide);
               // alert(this.inputs[1].id)
               // alert(sessionStorage.getItem('IdOutputcon'))
-               
+              window.sessionStorage.setItem('posx',this.x);
+              alert(this.x)
                 
             };
 

@@ -45,7 +45,7 @@ function readHistorias() {
         console.log(listnarr)
             for (i in listnarr) {
                     if([i]==0){
-                       html += "<td>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</td>";
+                       html += "<td style= 'color:rgb(135, 206, 250)';>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</td>";
                        outId = listnarr[i].Narr_out_id
                     }
                     if(listnarr[i].Narr_outCon_id==outId){
@@ -72,7 +72,7 @@ function setIdPassagem(Idpassagem){
     var htm = ''
     for (i in listnarr) {
         if(listnarr[i].Narr_id==Idpassagem){
-            html += "<td>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</td>";
+            html += "<td  style= 'color:rgb(135, 206, 250)'>"+listnarr[i].Narr_personagem+'<br>'+listnarr[i].Narr_script+"</td>";
            outIdd = listnarr[i].Narr_out_id
            //alert(outIdd)
 
@@ -88,7 +88,7 @@ function setIdPassagem(Idpassagem){
 
 
     }
-    alert(outIdd)
+  
 
     interagir.innerHTML = html;
     interact.innerHTML = htm;

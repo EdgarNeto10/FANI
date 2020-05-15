@@ -81,12 +81,27 @@
     text-align: center;
     font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url('https://i2.wp.com/sitedosgeeks.com/wp-content/uploads/2019/01/1546961357_bandersnatch1921.jpg?fit=1921%2C1079&ssl=1');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }
 
 
 table, th, td {
-  border: 2px solid black;
+  border: 2px solid  rgb(4, 55, 131);;
 }
 
 
+#imgFlux{
+    background-image: url('../images/BlackMirrorDiagram.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  
+
+
+}
 

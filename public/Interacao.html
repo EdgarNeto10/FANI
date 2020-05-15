@@ -12,6 +12,8 @@
 
     <!-- Biblioteca -->
     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    
  
 </head>
@@ -33,22 +35,109 @@
    <!-- <input type="button" onclick="readHistorias()" value="Testar histórias"> -->
 
    
-
+   <i class="material-icons" style="font-size:48px;color:rgb(11, 37, 71);float:right;cursor: pointer;" id="myBtn">photo</i>
 
    <table style="width:50%; margin-left:325px; margin-top: 5px;">
     <tr>
-      <th id= nomeNA>Firstname</th>
+      <th id= nomeNA style="background-color: rgba(214, 211, 211, 0.836);"></th>
     </tr>
-    <tr style="height:435px" id="interagir">
+    <tr style="height:435px;" id="interagir">
       
     </tr>
-    <tr style="height:50px" id="interact" >
+    <tr style="height:50px;background-color: rgba(214, 211, 211, 0.836);" id="interact" >
       
     </tr>
     
   </table>
 
+     <!-- The Modal -->
+     <div id="myModal"  class="modal">
+            
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id=imgFlux></div>
+        </div>
+  
+      </div>
+      
+      <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
     
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding: 200px; /* Location of the box */   
+      left:0;
+      top: 0;
+      width: 95%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+       /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+     
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 200px;
+      border: 1px solid #888;
+      width: 50%;
+      height: 100%;
+      margin-bottom: 100px;
+      
+     
+     
+    }
+    
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+     
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    </style>  
 </body>
 
 </html>
