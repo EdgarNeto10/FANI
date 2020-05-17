@@ -2,8 +2,8 @@ Titulo: FANI
 
 Participantes:
 
-Número	Nome
-50035284	Edgar Neto
+Número:50035284
+Nome:Edgar Neto
 
 Enquadramento:
 
@@ -52,7 +52,9 @@ Aceder e editar  narrativas narrativas criadas
 O projeto deverá ser desenvolvido nas  seguintes tecnologias :
 
 •	JavaSricpt
+
 •	HTML/CSS
+
 •	Biblioteca Linker
 
 
