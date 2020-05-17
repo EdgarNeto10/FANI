@@ -41,7 +41,7 @@
     <!--Formulário -->
 
     <div id="editor" class="well">
-        <p id="lab">Escrever Narrativa</p><br>
+        <p id="lab">Escrever Narrativa <i id="myBtn" class="fa fa-question-circle" style="font-size:22px;cursor:pointer;" ></i></p><br> 
         <label for="accao">Acção</label>
         <input type="text" name="accao" id="accao" value="">
 
@@ -52,10 +52,11 @@
         <textarea id="nodeDialog" name="nodeDialog"></textarea>
         <!--Buttons-->
 
-        <button type="button" onclick="NovaPassagem()">Criar nova passagem</button>
+        <button type="button" onclick="NovaPassagem()"> Passagem principal</button>
         <button type="button" onclick="Passagemfilha()">Passagem filha</button>
-        <button type="button" onclick=" SalvarNarrativa()">Salvar narrativa</button>
-        
+         <button type="button" onclick="updatePassagem()">Edit passagem</button>
+        <button type="button" onclick=" SalvarNarrativa()">Salvar narrativa</button> <div id='demo'></div>
+       
         <!--Instruções-->
         <style>
             body {font-family: Arial, Helvetica, sans-serif;}
@@ -103,7 +104,7 @@
             <!-- Trigger/Open The Modal -->
             
             
-            <i id="myBtn" class="fa fa-question-circle" style="font-size:22px;cursor:pointer;" ></i>
+           
             
             <!-- The Modal -->
             <div id="myModal"  class="modal">
@@ -155,7 +156,7 @@
     
 
     </div>
-
+   
 
 </body>
 

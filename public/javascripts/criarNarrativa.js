@@ -19,6 +19,10 @@ var nos_out;
 var idOutput;
 var node1_ou;
 var posicao=0
+
+var inp2
+var inp1
+var outp
 //--------------------------------------//
 window.onload = function () {
     
@@ -88,9 +92,14 @@ function NovaPassagem() {
                 alert( this.inputs[1].name);
                 alert( this.outputs[0].name);
         */ 
-   
                window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
+               window.sessionStorage.setItem('IdOutpu',this.outputs[0].__id);
                window.sessionStorage.setItem('IdOutputcon',this.outputs[0].__id);
+               window.sessionStorage.setItem('Iname',this.inputs[0].name);
+               window.sessionStorage.setItem('Iname1',this.inputs[1].name);
+               window.sessionStorage.setItem('Outname',this.outputs[0].name);
+               alert(this.inputs[0].name)
+               this.inputs[0].name='oi'
                
                //alert( this.outputs[0].id);   
                //Id para detetar o click no node1           
@@ -145,9 +154,9 @@ function Passagemfilha() {
      }
 
     }
-
-    node2_in = node2.input(outputcon, nodeDialog.value);
     node2_in = node2.input('input_id', personagem.value);
+    node2_in = node2.input(outputcon, nodeDialog.value);
+   
 
     alert(node2.x)
     posicao = node2.x
@@ -172,10 +181,13 @@ function Passagemfilha() {
     
 
     node2.onClick =  function () {
-       
-   
+              
                window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
+               window.sessionStorage.setItem('IdOutpu',this.outputs[0].__id);
                window.sessionStorage.setItem('IdOutputcon',this.outputs[0].__id);
+               window.sessionStorage.setItem('Iname',this.inputs[0].name);
+               window.sessionStorage.setItem('Iname1',this.inputs[1].name);
+               window.sessionStorage.setItem('Outname',this.outputs[0].name);
             
                //alert( this.outputs[0].id); 
              //Id para detetar o click no node1              
@@ -242,6 +254,36 @@ function SalvarNarrativa(){
 
 console.log(narrSave)
 console.log(NarrNome)
+
+}
+
+
+var idEdit;
+
+function updatePassagem(){
+    inp1=document.getElementById(sessionStorage.getItem('Iname'))
+    inp2=document.getElementById(sessionStorage.getItem('Iname1'))
+    outp=document.getElementById(sessionStorage.getItem('Outname'))
+    idEdit=sessionStorage.getItem('IdOutpu');
+    alert(idEdit)
+    alert(sessionStorage.getItem('Iname'))
+    for (i in narrSave){
+        if(narrSave[i].outId==idEdit){
+        //A pegar os id's do html na biblioteca
+           narrSave[i].inpt1=personagem.value
+           inp1.innerHTML=personagem.value;
+           narrSave[i].inpt2=nodeDialog.value
+           inp2.innerHTML=nodeDialog.value;     
+           narrSave[i].outpt=accao.value
+           outp.innerHTML=accao.value;
+          
+          
+            
+        }
+
+    }
+    console.log(narrSave)
+   
 
 }
 

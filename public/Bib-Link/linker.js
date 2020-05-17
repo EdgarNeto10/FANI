@@ -108,7 +108,9 @@
 
         // add input to the node
         node.inputs = [];
+        var c=1
         node.input = function (id, name)
+       
         {
             var i = node.inputs.push({
                 __id: gid(),
@@ -123,7 +125,7 @@
             node.pathsIn[input.__id] = [];
 
 
-            var label = $("<div class=\"linker_label\"><span>" + name + "</span></span></div>").append(input.el);
+            var label = $("<div class=\"linker_label\"><span id="+name+">" + name + "</span></span></div>").append(input.el);
             $(".linker_inputs", node.el).append(label);
             return input;
         };
@@ -185,7 +187,7 @@
                 });
             };
 
-            var label = $("<div class=\"linker_label\"><span>" + name + "</span></div>").append(output.el);
+            var label = $("<div class=\"linker_label\"><span id="+name+">" + name + "</span></div>").append(output.el);
             $(".linker_outputs", node.el).append(label);
             return output;
         };
