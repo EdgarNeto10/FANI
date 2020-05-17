@@ -98,7 +98,7 @@ function NovaPassagem() {
                window.sessionStorage.setItem('Iname',this.inputs[0].name);
                window.sessionStorage.setItem('Iname1',this.inputs[1].name);
                window.sessionStorage.setItem('Outname',this.outputs[0].name);
-               alert(this.inputs[0].name)
+               //alert(this.inputs[0].name)
                this.inputs[0].name='oi'
                
                //alert( this.outputs[0].id);   
@@ -135,7 +135,8 @@ function NovaPassagem() {
 var c2=0
 
 function Passagemfilha() {
-   
+    
+    
     f = f + 1
     p = 130 + p
     //idec = sessionStorage.getItem('Ide');
@@ -158,7 +159,7 @@ function Passagemfilha() {
     node2_in = node2.input(outputcon, nodeDialog.value);
    
 
-    alert(node2.x)
+    //alert(node2.x)
     posicao = node2.x
     // add an output
     node2_out = node2.output(c2, accao.value);
@@ -196,7 +197,7 @@ function Passagemfilha() {
               // alert(this.inputs[1].id)
               // alert(sessionStorage.getItem('IdOutputcon'))
               window.sessionStorage.setItem('posx',this.x);
-              alert(this.x)
+              //alert(this.x)
                 
             };
 
