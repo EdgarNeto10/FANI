@@ -57,7 +57,7 @@ function readHistorias() {
 
            interagir.innerHTML = html;
            interact.innerHTML = htm;
-           nomeNA.innerHTML = sessionStorage.getItem('nomeN')
+           nomeNA.innerHTML = sessionStorage.getItem('nomeN')+'  '+'<i style="font-size:24px;cursor:pointer;color:blue" onclick="location.reload();" class="fa">&#xf021;</i>'
          
         },
         error: function () {

@@ -125,7 +125,7 @@
             node.pathsIn[input.__id] = [];
 
 
-            var label = $("<div class=\"linker_label\"><span id="+name+">" + name + "</span></span></div>").append(input.el);
+            var label = $("<div class=\"linker_label\"><span id="+id+">" + name + "</span></span></div>").append(input.el);
             $(".linker_inputs", node.el).append(label);
             return input;
         };
@@ -187,7 +187,7 @@
                 });
             };
 
-            var label = $("<div class=\"linker_label\"><span id="+name+">" + name + "</span></div>").append(output.el);
+            var label = $("<div class=\"linker_label\"><span id="+id+">" + name + "</span></div>").append(output.el);
             $(".linker_outputs", node.el).append(label);
             return output;
         };

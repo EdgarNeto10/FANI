@@ -73,16 +73,16 @@ function NovaPassagem() {
         
     };
 
-
+    
     // add an input
-    node1.input('input_id', personagem.value);
-    node1.input('input_id', nodeDialog.value);
+    node1.input(Math.random(), personagem.value);
+    node1.input(Math.random(), nodeDialog.value);
 
     // add an output
    
    
    
-    node1_out = node1.output( c1, accao.value);
+    node1_out = node1.output( Math.random(), accao.value);
   
     // Interagir com node clicado
   
@@ -92,14 +92,21 @@ function NovaPassagem() {
                 alert( this.inputs[1].name);
                 alert( this.outputs[0].name);
         */ 
+              
+               window.sessionStorage.setItem('IdEdit0',this.inputs[0].id);
+               window.sessionStorage.setItem('IdEdit1',this.inputs[1].id);
+               window.sessionStorage.setItem('IdEdit3',this.outputs[0].id);
+               window.sessionStorage.setItem('IdEdit1',this.inputs[1].id);
                window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
                window.sessionStorage.setItem('IdOutpu',this.outputs[0].__id);
                window.sessionStorage.setItem('IdOutputcon',this.outputs[0].__id);
+               /*
                window.sessionStorage.setItem('Iname',this.inputs[0].name);
                window.sessionStorage.setItem('Iname1',this.inputs[1].name);
                window.sessionStorage.setItem('Outname',this.outputs[0].name);
+               */
                //alert(this.inputs[0].name)
-               this.inputs[0].name='oi'
+              // this.inputs[0].name='oi'
                
                //alert( this.outputs[0].id);   
                //Id para detetar o click no node1           
@@ -183,12 +190,17 @@ function Passagemfilha() {
 
     node2.onClick =  function () {
               
+               window.sessionStorage.setItem('IdEdit0',this.inputs[0].id);
+               window.sessionStorage.setItem('IdEdit1',this.inputs[1].id);
+               window.sessionStorage.setItem('IdEdit3',this.outputs[0].id);
                window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
                window.sessionStorage.setItem('IdOutpu',this.outputs[0].__id);
                window.sessionStorage.setItem('IdOutputcon',this.outputs[0].__id);
+               /*
                window.sessionStorage.setItem('Iname',this.inputs[0].name);
                window.sessionStorage.setItem('Iname1',this.inputs[1].name);
                window.sessionStorage.setItem('Outname',this.outputs[0].name);
+               */
             
                //alert( this.outputs[0].id); 
              //Id para detetar o click no node1              
@@ -262,12 +274,12 @@ console.log(NarrNome)
 var idEdit;
 
 function updatePassagem(){
-    inp1=document.getElementById(sessionStorage.getItem('Iname'))
-    inp2=document.getElementById(sessionStorage.getItem('Iname1'))
-    outp=document.getElementById(sessionStorage.getItem('Outname'))
+    inp1=document.getElementById(sessionStorage.getItem('IdEdit0'))
+    inp2=document.getElementById(sessionStorage.getItem('IdEdit1'))
+    outp=document.getElementById(sessionStorage.getItem('IdEdit3'))
     idEdit=sessionStorage.getItem('IdOutpu');
-    alert(idEdit)
-    alert(sessionStorage.getItem('Iname'))
+    //alert(idEdit)
+   // alert(sessionStorage.getItem('Iname'))
     for (i in narrSave){
         if(narrSave[i].outId==idEdit){
         //A pegar os id's do html na biblioteca
