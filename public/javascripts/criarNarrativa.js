@@ -162,7 +162,7 @@ function Passagemfilha() {
      }
 
     }
-    node2_in = node2.input('input_id', personagem.value);
+    node2_in = node2.input(Math.random(), personagem.value);
     node2_in = node2.input(outputcon, nodeDialog.value);
    
 
@@ -191,8 +191,11 @@ function Passagemfilha() {
     node2.onClick =  function () {
               
                window.sessionStorage.setItem('IdEdit0',this.inputs[0].id);
+               alert(this.inputs[0].id)
                window.sessionStorage.setItem('IdEdit1',this.inputs[1].id);
+               alert(this.inputs[1].id)
                window.sessionStorage.setItem('IdEdit3',this.outputs[0].id);
+               alert(this.outputs[0].id)
                window.sessionStorage.setItem('IdOutput',this.outputs[0].id);
                window.sessionStorage.setItem('IdOutpu',this.outputs[0].__id);
                window.sessionStorage.setItem('IdOutputcon',this.outputs[0].__id);
