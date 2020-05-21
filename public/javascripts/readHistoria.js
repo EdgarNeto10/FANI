@@ -6,6 +6,7 @@ var listnarr=[] ;
 var outId;
 var outIdd;
 var nomeNA
+
 //--------------------------------------//
 window.onload = function () {
     interagir = document.getElementById('interagir')
@@ -14,12 +15,12 @@ window.onload = function () {
     // NovaPassagemTeste()
     // TestarGravaçãoLocal();
      readHistorias()
-    
+     
 }
 
 
-//-------Functions--------------//
 
+//-------Functions--------------//
 
 
 function readHistorias() {

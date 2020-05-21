@@ -11,7 +11,7 @@ var app = express();
 /*Está a fazer a requisição do router criado */
 
 var narrativasRouter = require('./routes/narrativasRoutes');
-
+var caminhosRouter = require('./routes/caminhosRoutes');
 
 // view engine setup
 
@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* A montar o router com um determinado caminho  */
 
 app.use('/api/narrativas', narrativasRouter);
+app.use('/api/caminhos', caminhosRouter);
 
 
 

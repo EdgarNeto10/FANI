@@ -14,7 +14,6 @@ var Nhist
 //--------------------------------------//
 window.onload = function () {
     Nnarr= document.getElementById('Nnarr')
-    Nhist= document.getElementById('Nhist')
     readNamesNarrativas()
     
 }
@@ -25,14 +24,20 @@ window.onload = function () {
 
 function pagesN(Narrid){ 
     window.location.href='../EditNarrativa.html';
-    window.sessionStorage.setItem('Narrid',Narrid);
+    window.sessionStorage.setItem('Narridd',Narrid);
+    for(i in list){
+        if(list[i].Narr_id_id==Narrid){
+            var nomeNN =list[i].Narr_nome
+}
+    window.sessionStorage.setItem('nomeNN',nomeNN)
    
 }
 
-
+}
 
 var c = 0
 var nome;
+var list;
 function readNamesNarrativas(){
     $.ajax({
         url: '/api/narrativas',
@@ -40,6 +45,7 @@ function readNamesNarrativas(){
         contentType: "application/json", // sending in json
         dataType: "json",// receiving in json
         success: function (res, status) {
+            list=res
             listnarr= res
             var html = ''
             for (i in listnarr) {
@@ -52,13 +58,13 @@ function readNamesNarrativas(){
                     html += "<li onclick=pagesN("+listnarr[i].Narr_id_id+") >"+listnarr[i].Narr_nome+"</li>";
                 }
             }
-             nome =listnarr[i].Narr_nome
-                
+            nome =listnarr[i].Narr_nome
+            
                
             }
 
            Nnarr.innerHTML = html;
-     
+          
          
         },
         error: function () {
@@ -66,6 +72,5 @@ function readNamesNarrativas(){
         }
     })
 }
-
 
 

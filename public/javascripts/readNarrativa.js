@@ -18,6 +18,7 @@ window.onload = function () {
      //NovaPassagemTeste()
     // TestarGravaçãoLocal();
     readNarrativas();
+    readCaminhos(); 
   
 }
 
@@ -28,103 +29,56 @@ window.onload = function () {
 
 function readNarrativas() {
     $.ajax({
-        url: '/api/narrativas/'+sessionStorage.getItem('Narrid'),
+        url: '/api/narrativas/'+sessionStorage.getItem('Narridd'),
         method: 'get',
         contentType: "application/json", // sending in json
         dataType: "json",// receiving in json
         success: function (res, status) {
             listnarr= res
-            /* Verificar o primeiro elemento //
-            
-            for (n in listnar){
-                if(listnar[n].Narr_outCon_id=='1'){
-                    listnarr.push(listnar[n])
-                }
-            }
-            for (nn in listnar){
-                if(listnar[nn].Narr_outCon_id != '1'){
-                listnarr.push(listnar[nn])
-            }
-        }
-        */
-        //console.log(listnarr)
+       
             for (i in listnarr) {
-                if(listnarr[i]==listnarr[0]){
-                    n = n + 1
-                    // add a node
-                    node1 = linker.node({ id: 'first', name: [n] + 'º Passagem', x: 10, y: 190 });
-                    console.log(this);
-                
-                        // when the node position change
-                        node1.onDrag = function (x, y) {
-                            console.log(x, y, this); // print the new position and the node object
-                        };
-                    
-                        // trigger when delete the node
-                        node1.onRemove = function () {
-                            console.log(this); // print the node object
-                        };
-                    
-                        // trigger when setting icon clicked
-                        node1.onSetting = function () {
-                            alert('Setting ' + this.name);
-                        };
-                
+                    n=n+1
+                    node1 = linker.node({ id: 'node_'+[n], name: [n] + 'º Passagem', x: listnarr[i].Narr_X, y: listnarr[i].Narr_Y }); 
                          // add an input
                     node1.input('input_id', listnarr[i].Narr_personagem);
                     node1.input('input_id', listnarr[i].Narr_script);
                 
                     // add an output
                     node1_out = node1.output('output_id', listnarr[i].Narr_accao);
-                
-                    // trigger when this output connect to new input
-                
-                    node1_out.onConnect = function (input) {
-                        console.log(this, input); // print the output and the input objects
-                
+
+                    node1.onDrag = function (x, y) {
+                        console.log(x, y, this);
+                        
                     };
-                
-                
-                    // trigger when this output link remove
-                    node1_out.onRemove = function (index) {
-                        console.log(index)
-                    };
-                    }
-                   if(listnarr[i]!=listnarr[0]){ 
-                   for (j in listnarr){
-                  
-                    //alert(narrout)
-                    if(listnarr[j].Narr_outCon_id==narrout){
-                    f = f + 1
-                    p= 130 + p
-                    // add node 2
-                    node2 = linker.node({ id: 'second', name: [n] + '.' + [f] + ' Passagem', x: 400, y: p });
-                    node2_in = node2.input('input_id', listnarr[i].Narr_personagem);
-                    node2_in = node2.input('input_id', listnarr[i].Narr_script);
-                
-                    // add an output
-                    node2_out = node2.output('output_id', listnarr[i].Narr_accao);
-                
-                    node2.onSetting = function () {
-                        alert('Setting ' + this.name);
-                    };
-                
-                    // add path between two nodes
                     
-                    node1_out.connect(node2_in);
-                }
-                
-                }
-                
-          
-            
-            }
-                var narrout = listnarr[i].Narr_out_id 
                  
             }
-            var outCon = listnarr[i].Narr_outCon_id 
-            alert(outCon)
-              
+           
+        },
+        error: function () {
+
+        }
+    })
+
+}
+
+
+
+function readCaminhos() {
+    $.ajax({
+        url: '/api/caminhos/'+sessionStorage.getItem('Narridd'),
+        method: 'get',
+        contentType: "application/json", // sending in json
+        dataType: "json",// receiving in json
+        success: function (res, status) {
+            listnarr= res
+            for (i in listnarr) {
+                    
+             document.getElementById("linker_paths").innerHTML+='<path d="'+listnarr[i].Caminho_path+'"></path>'
+                 
+                 
+            }
+           
         },
         error: function () {
 

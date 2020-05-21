@@ -35,7 +35,7 @@ window.onload = function () {
     var idnode = 'linker'
     linker = $('#'+idnode).linker()
    
-
+  
 }
 
 
@@ -121,7 +121,7 @@ function NovaPassagem() {
     // trigger when this output connect to new input
 
     node1_out.onConnect = function (input) {
-        console.log(this, input); // print the output and the input objects
+       // console.log(this, input); // print the output and the input objects
         //alert(this, input)
        // alert(node1.pathsOut) 
       
@@ -133,9 +133,9 @@ function NovaPassagem() {
         console.log(index)
     };
     outI=node1.outputs[0].__id
-    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId: outI, outConId: '1' ,})
+    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId: outI, outConId: '1', passX: node1.x, passY: node1.y})
    
-    console.log(node1.pathsOut)
+    console.log(narrSave)
 
 }
 
@@ -183,8 +183,8 @@ function Passagemfilha() {
 
     //alert( idOutput)
 
-    console.log(node2.pathsOut)
-    console.log(node2.pathsIn)
+    //console.log(node2.pathsOut)
+    //console.log(node2.pathsIn)
 
     
 
@@ -227,7 +227,7 @@ function Passagemfilha() {
        // alert(node2.outputs[0].__id)
         
     outI=node2.outputs[0].__id
-    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId :outI , outConId:  outputcon ,})
+    narrSave.push ({inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId :outI , outConId:  outputcon ,passX: node2.x, passY: node2.y})
 }
 
 function NomeNarrativa() {
@@ -238,9 +238,12 @@ function NomeNarrativa() {
     }
   }
 
-  var narrid=Math.random()
+// A gerar o id aleatorio de cada narrativa criada
+var narrid=Math.random()
+
 function SalvarNarrativa(){
     NomeNarrativa();
+    
     for(i in narrSave ){
     
     $.ajax({
@@ -253,7 +256,9 @@ function SalvarNarrativa(){
             accao: narrSave[i].outpt,
             outId: narrSave[i].outId ,
             outConId: narrSave[i].outConId,
-            narrid:narrid
+            narrid:narrid,
+            passX: narrSave[i].passX,
+            passY: narrSave[i].passY
 
 
         },
@@ -265,13 +270,34 @@ function SalvarNarrativa(){
         }
 
     })
-    //console.log(data)
+    
 }
 
-console.log(narrSave)
-console.log(NarrNome)
+caminhos = JSON.parse(sessionStorage.getItem("path"))
+
+for (i in caminhos){  
+    $.ajax({
+        url: "/api/caminhos",
+        method: "post",
+        data: {
+            narrid:narrid,
+            path: caminhos[i]
+    
+        },
+        success: function (res, status) {
+        //console.log(res.status);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+
+    })
+}
 
 }
+
+
+
 
 
 var idEdit;
@@ -298,7 +324,7 @@ function updatePassagem(){
         }
 
     }
-    console.log(narrSave)
+    //console.log(narrSave)
    
 
 }

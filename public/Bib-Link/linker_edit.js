@@ -281,67 +281,6 @@
     });
 
 
-    /*
-     *  dragging
-     */
-    var dragNode, dragWidth = 0;
-
-    lk.on("mousedown touchstart", ".linker_node > h3", function (e) {
-        if(e.type === "touchstart"){
-            container.css("overflow", "hidden");
-		}
-
-		if(e.target !== this){
-			return;
-		}
-
-		dragNode   = $(e.target).parent();
-		dragWidth = dragNode.width() / 2;
-
-    })
-    lk.on("mouseup touchend", function (e) {
-        if(e.type === "touchend"){
-			container.css("overflow", "auto");
-		}
-
-        // trigger onDragFinish
-        if(dragNode) {
-			var node = dragNode.data("obj");
-            if(node.onDragFinish){
-				node.onDragFinish(parseInt(dragNode.css("left")), parseInt(dragNode.css("top")));
-			}
-        }
-        
-        dragNode = null;
-       
-    })
-    .on("mousemove touchmove", function(e) {
-        // drag
-        if (dragNode) {
-			dragNode.offset({top: e.pageY - 10, left: e.pageX - dragWidth}).trigger("drag");
-
-            // update paths
-			var node = dragNode.data("obj"),
-				nodePaths = $.extend( $.extend({}, node.pathsOut), node.pathsIn);
-
-            $.each(nodePaths, function (_, arr) {
-                $.each(arr, function (_, p) {
-                    var p1 = p[1].el.offset(),
-                        p2 = p[2].el.offset();
-                    $(p[0]).attr("d", curve(p1.left, p1.top, p2.left, p2.top));
-                });
-            });
-
-			if(node.onDrag){
-				node.onDrag(parseInt(dragNode.css("left")), parseInt(dragNode.css("top")));
-			}
-        }
-
-        // path
-        if(dragPath) {
-            $(dragPath).attr("d", curve(dragPathPos.left, dragPathPos.top, e.pageX - 5, e.pageY - 5));
-        }
-    });
 
     return this;
 };
