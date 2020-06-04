@@ -1,4 +1,7 @@
-#logo{ max-width: 200px; max-height: 100px }
+#logo {
+    max-width: 200px;
+    max-height: 100px
+}
 
 #lab {
     font-variant: small-caps;
@@ -6,7 +9,6 @@
     padding: 0;
     margin: 0;
     color: rgb(102, 186, 224);
-    
 }
 
 #editor {
@@ -17,10 +19,13 @@
     margin: 10px;
     box-shadow: 0 0 3px 0px rgb(46, 116, 221);
 }
+
+
 /*w=586*/
+
 #editor #nodeDialog {
-    width: 500px; 
-    height: 400px;
+    width: 500px;
+    height: 328px;
     resize: vertical;
 }
 
@@ -41,17 +46,42 @@
     margin: 10px 0 0 0;
 }
 
-
 .nav {
     width: calc(100% - 565px);
     margin-bottom: 0px;
-    margin-top: 0px;  
+    margin-top: 0px;
 }
 
-.nav-tabs .active a, .nav-tabs .active a:hover {
+.nav-tabs .active a,
+.nav-tabs .active a:hover {
     background: #EFEFEF;
 }
 
+.persNP {
+    display: inline-block;
+    padding: 15px 25px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(102, 186, 224);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
 
+.persNP:hover {
+    background-color: rgb(161, 216, 243);
+}
 
+.persNP:active {
+    background-color: rgb(161, 216, 243);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
+#SN {
+    margin-top: 12px;
+    margin-left: 175px;
+}
