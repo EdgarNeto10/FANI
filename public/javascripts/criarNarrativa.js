@@ -112,98 +112,102 @@ function NovaPassagem() {
     n = n + 1
         //window.sessionStorage.setItem('IdOutput','output'+n);
         // add a node
-    node1 = linker.node({ id: Math.random().toString(36).substr(2, 8), name: [n] + 'º Passagem', x: 10, y: 190 });
-    console.log(this);
-    console.log(node1.id);
+    if (n == 1) {
+        node1 = linker.node({ id: Math.random().toString(36).substr(2, 8), name: [n] + 'º Passagem', x: 10, y: 190 });
+        console.log(this);
+        console.log(node1.id);
 
-    // when the node position change
-    node1.onDrag = function(x, y) {
-        console.log(x, y, this); // print the new position and the node object
+        // when the node position change
+        node1.onDrag = function(x, y) {
+            console.log(x, y, this); // print the new position and the node object
 
-    };
+        };
 
-    // trigger when delete the node
-    node1.onRemove = function() {
-        console.log(this); // print the node object
-    };
+        // trigger when delete the node
+        node1.onRemove = function() {
+            console.log(this); // print the node object
+        };
 
-    // trigger when setting icon clicked
-    node1.onSetting = function() {
-        alert('Setting ' + this.name);
+        // trigger when setting icon clicked
+        node1.onSetting = function() {
+            alert('Setting ' + this.name);
 
-    };
-
-
-    // add an input
-    node1.input(Math.random(), personagem.value);
-    node1.input(Math.random(), nodeDialog.value);
-
-    // add an output
+        };
 
 
+        // add an input
+        node1.input(Math.random(), personagem.value);
+        node1.input(Math.random(), nodeDialog.value);
 
-    node1_out = node1.output(Math.random(), accao.value);
-
-    // Interagir com node clicado
-
-    node1.onClick = function() {
-        /* Alertas para identificar o inputs e outputs
-                alert( this.inputs[0].name);
-                alert( this.inputs[1].name);
-                alert( this.outputs[0].name);
-        */
-
-        window.sessionStorage.setItem('IdEdit0', this.inputs[0].id2);
-        window.sessionStorage.setItem('IdEdit1', this.inputs[1].id2);
-        window.sessionStorage.setItem('IdEdit3', this.outputs[0].id2);
-
-        window.sessionStorage.setItem('IdOutput', this.outputs[0].id);
-        window.sessionStorage.setItem('IdOutpu', this.outputs[0].__id);
-        window.sessionStorage.setItem('IdOutputcon', this.outputs[0].__id);
-        /*
-        window.sessionStorage.setItem('Iname',this.inputs[0].name);
-        window.sessionStorage.setItem('Iname1',this.inputs[1].name);
-        window.sessionStorage.setItem('Outname',this.outputs[0].name);
-        */
-        //alert(this.inputs[0].name)
-        // this.inputs[0].name='oi'
-
-        //alert( this.outputs[0].id);   
-        //Id para detetar o click no node1           
-        ide = 0
-            // alert( this.outputs[0].__id);
-
-        window.sessionStorage.setItem('NODEid', this.id);
-
-        nodeInteract()
-
-
-    };
+        // add an output
 
 
 
+        node1_out = node1.output(Math.random(), accao.value);
 
-    // trigger when this output connect to new input
+        // Interagir com node clicado
 
-    node1_out.onConnect = function(input) {
-        // console.log(this, input); // print the output and the input objects
-        //alert(this, input)
-        // alert(node1.pathsOut) 
+        node1.onClick = function() {
+            /* Alertas para identificar o inputs e outputs
+                    alert( this.inputs[0].name);
+                    alert( this.inputs[1].name);
+                    alert( this.outputs[0].name);
+            */
 
-    };
+            window.sessionStorage.setItem('IdEdit0', this.inputs[0].id2);
+            window.sessionStorage.setItem('IdEdit1', this.inputs[1].id2);
+            window.sessionStorage.setItem('IdEdit3', this.outputs[0].id2);
+
+            window.sessionStorage.setItem('IdOutput', this.outputs[0].id);
+            window.sessionStorage.setItem('IdOutpu', this.outputs[0].__id);
+            window.sessionStorage.setItem('IdOutputcon', this.outputs[0].__id);
+            /*
+            window.sessionStorage.setItem('Iname',this.inputs[0].name);
+            window.sessionStorage.setItem('Iname1',this.inputs[1].name);
+            window.sessionStorage.setItem('Outname',this.outputs[0].name);
+            */
+            //alert(this.inputs[0].name)
+            // this.inputs[0].name='oi'
+
+            //alert( this.outputs[0].id);   
+            //Id para detetar o click no node1           
+            ide = 0
+                // alert( this.outputs[0].__id);
+
+            window.sessionStorage.setItem('NODEid', this.id);
+
+            nodeInteract()
 
 
-    // trigger when this output link remove
-    node1_out.onRemove = function(index) {
-        console.log(index)
-    };
-    outI = node1.outputs[0].__id
-    narrSave.push({ inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId: outI, outConId: '1', passX: node1.x, passY: node1.y })
-
-    console.log(narrSave)
+        };
 
 
 
+
+        // trigger when this output connect to new input
+
+        node1_out.onConnect = function(input) {
+            // console.log(this, input); // print the output and the input objects
+            //alert(this, input)
+            // alert(node1.pathsOut) 
+
+        };
+
+
+        // trigger when this output link remove
+        node1_out.onRemove = function(index) {
+            console.log(index)
+        };
+        outI = node1.outputs[0].__id
+        narrSave.push({ inpt1: personagem.value, inpt2: nodeDialog.value, outpt: accao.value, outId: outI, outConId: '1', passX: node1.x, passY: node1.y })
+
+        console.log(narrSave)
+
+
+    } else {
+        alert('A passagem principal já foi inserida')
+
+    }
 
 
 
@@ -226,14 +230,20 @@ function Passagemfilha() {
         node2 = linker.node({ id: Math.random().toString(36).substr(2, 8), name: [cn] + 'ª Passagem', x: 400, y: p });
     }
     if (f != 1) {
+
         if (sessionStorage.getItem('posx') == posicao) {
             node2 = linker.node({ id: Math.random().toString(36).substr(2, 8), name: [cn] + 'ª Passagem', x: posicao + 300, y: p });
         }
+
         if (sessionStorage.getItem('posx') != posicao) {
             node2 = linker.node({ id: Math.random().toString(36).substr(2, 8), name: [cn] + 'ª Passagem', x: posicao, y: p });
         }
 
     }
+
+
+
+
     node2_in = node2.input(Math.random(), personagem.value);
     node2_in = node2.input(outputcon, nodeDialog.value);
 
@@ -313,8 +323,9 @@ function Passagemfilha() {
 function NomeNarrativa() {
     NarrNome = prompt("Insira o nome da narrativa", "Harry Potter");
     if (NarrNome != null) {
-        document.getElementById("demo").innerHTML =
+        document.getElementById("savenarr").innerHTML =
             "Criou a narrativa " + NarrNome + " :)";
+        SalvarNarrativa()
     }
 }
 
@@ -322,7 +333,6 @@ function NomeNarrativa() {
 var narrid = Math.random()
 
 function SalvarNarrativa() {
-    NomeNarrativa();
 
     for (i in narrSave) {
 
@@ -386,10 +396,9 @@ function updatePassagem() {
     inp1 = document.getElementById(sessionStorage.getItem('IdEdit0'))
     inp2 = document.getElementById(sessionStorage.getItem('IdEdit1'))
     outp = document.getElementById(sessionStorage.getItem('IdEdit3'))
-    console.log(outp)
+
     idEdit = sessionStorage.getItem('IdOutpu');
-    //alert(idEdit)
-    // alert(sessionStorage.getItem('Iname'))
+
     for (i in narrSave) {
         if (narrSave[i].outId == idEdit) {
             //A pegar os id's do html na biblioteca
@@ -404,7 +413,8 @@ function updatePassagem() {
 
 
     }
-    //console.log(narrSave)
+
+
 
 
 }

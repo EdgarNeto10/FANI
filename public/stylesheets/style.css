@@ -85,3 +85,9 @@
     margin-top: 12px;
     margin-left: 175px;
 }
+
+#savenarr {
+    color: rgb(18, 165, 67);
+    font-style: oblique;
+    font-weight: bold
+}

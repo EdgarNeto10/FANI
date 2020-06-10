@@ -9,8 +9,9 @@ var node2;
 var node2_in;
 var node2_out
 var Nnarr
-    //var listnarr = []
-    //--------------------------------------//
+var nodeid;
+//var listnarr = []
+//--------------------------------------//
 window.onload = function() {
     Nnarr = document.getElementById('Nnarr')
     linker = $('#linker').linker();
@@ -18,6 +19,9 @@ window.onload = function() {
     // TestarGravaçãoLocal();
     readNarrativas();
     readCaminhos();
+    personagem = document.getElementById('personagem')
+    accao = document.getElementById('accao')
+    nodeDialog = document.getElementById('nodeDialog')
 
 }
 
@@ -73,7 +77,7 @@ function readNarrativas() {
 
             for (i in listnarr) {
                 n = n + 1
-                node1 = linker.node({ id: 'node_' + [n], name: [n] + 'º Passagem', x: listnarr[i].Narr_X, y: listnarr[i].Narr_Y });
+                node1 = linker.node({ id: listnarr[i].Narr_id, name: ' Passagem X', x: listnarr[i].Narr_X, y: listnarr[i].Narr_Y });
                 // add an input
                 node1.input('input_id', listnarr[i].Narr_personagem);
                 node1.input('input_id', listnarr[i].Narr_script);
@@ -95,6 +99,7 @@ function readNarrativas() {
                     window.sessionStorage.setItem('IdOutput', this.outputs[0].id);
                     window.sessionStorage.setItem('IdOutpu', this.outputs[0].__id);
                     window.sessionStorage.setItem('IdOutputcon', this.outputs[0].__id);
+
                     /*
                     window.sessionStorage.setItem('Iname',this.inputs[0].name);
                     window.sessionStorage.setItem('Iname1',this.inputs[1].name);
@@ -107,11 +112,12 @@ function readNarrativas() {
                     //Id para detetar o click no node1           
                     ide = 0
 
+                    nodeid = this.id
 
                     window.sessionStorage.setItem('NODEid', this.id);
 
+                    // Para fazer o update irei pôr o id de cada passagem no seu determinado node.
                     nodeInteract()
-
 
                 }
 
@@ -124,6 +130,9 @@ function readNarrativas() {
     })
 
 }
+
+
+
 
 
 
@@ -147,5 +156,58 @@ function readCaminhos() {
 
         }
     })
+
+}
+
+
+
+function updatePassagem() {
+    inp1 = document.getElementById(sessionStorage.getItem('IdEdit0'))
+    inp2 = document.getElementById(sessionStorage.getItem('IdEdit1'))
+    outp = document.getElementById(sessionStorage.getItem('IdEdit3'))
+    validarNarr();
+
+    inp1.innerHTML = personagem.value;
+
+    inp2.innerHTML = nodeDialog.value;
+
+
+    outp.innerHTML = accao.value;
+
+}
+
+
+
+function updateNarr() {
+    $.ajax({
+        url: "/api/update/passagens/" + nodeid,
+        method: "put",
+        data: {
+            perso: personagem.value,
+            accao: accao.value,
+            script: nodeDialog.value
+        },
+
+        success: function(res) {
+            alert('u')
+        },
+        error: function(err) {
+            console.log(err);
+        }
+
+
+    })
+}
+
+// Esta função serve para validar se o utilizador pretende fazer a alterção
+
+function validarNarr() {
+
+    var r = confirm("Tem a certeza que pretende fazer a alteração?");
+    if (r == true) {
+        updateNarr()
+
+    }
+
 
 }
