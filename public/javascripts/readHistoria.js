@@ -45,11 +45,11 @@ function readHistorias() {
             console.log(listnarr)
             for (i in listnarr) {
                 if ([i] == 0) {
-                    html += "<td style= 'color:rgb(135, 206, 250)';>" + listnarr[i].Narr_personagem + '<br>' + listnarr[i].Narr_script + "</td>";
+                    html += "<td style= 'color:rgb(135, 206);';>" + listnarr[i].Narr_personagem + '<br><br><br><br><br><br>' + listnarr[i].Narr_script + "</td > ";
                     outId = listnarr[i].Narr_out_id
                 }
                 if (listnarr[i].Narr_outCon_id == outId) {
-                    htm += "<td style='cursor: pointer;' onclick='setIdPassagem(" + listnarr[i].Narr_id + ");' >" + listnarr[i].Narr_accao + "</td>";
+                    htm += "<td style='cursor: pointer;  border-radius:50%' onclick='setIdPassagem(" + listnarr[i].Narr_id + ");' >" + listnarr[i].Narr_accao + "</td>";
                 }
             }
 
@@ -72,7 +72,7 @@ function setIdPassagem(Idpassagem) {
     var htm = ''
     for (i in listnarr) {
         if (listnarr[i].Narr_id == Idpassagem) {
-            html += "<td  style= 'color:rgb(135, 206, 250)'>" + listnarr[i].Narr_personagem + '<br>' + listnarr[i].Narr_script + "</td>";
+            html += "<td  style= 'color:rgb(135, 206); '>" + listnarr[i].Narr_personagem + '<br><br><br><br><br><br>' + listnarr[i].Narr_script + "</td>";
             outIdd = listnarr[i].Narr_out_id
                 //alert(outIdd)
 
@@ -82,8 +82,8 @@ function setIdPassagem(Idpassagem) {
     for (j in listnarr) {
         if (listnarr[j].Narr_outCon_id == outIdd) {
             // alert(outIdd)
-            // alert(listnarr[i].Narr_accao)
-            htm += "<td style='cursor: pointer;' onclick='setIdPassagem(" + listnarr[j].Narr_id + ");' >" + listnarr[j].Narr_accao + "</td>";
+            // alert(listnarr[i].Narr_accao) <button type=button class='persNP'>" +listnarr[j].Narr_accao+ "</button>
+            htm += "<td style='cursor: pointer; border-radius:50%' onclick='setIdPassagem(" + listnarr[j].Narr_id + ");' >" + listnarr[j].Narr_accao + "</td>";
         }
 
 

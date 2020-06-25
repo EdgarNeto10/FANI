@@ -1,107 +1,100 @@
-
-#logo{ 
-    max-width: 200px; 
-    max-height: 100px 
-}
-
-.nav {
-    margin-bottom: 0px;
-    margin-top: 0px;  
-}
-
-.nav-tabs .active a, .nav-tabs .active a:hover {
-    background: #EFEFEF;
-}
-
-#Nnarr li {
-
-    background-color: rgba(190, 221, 233, 0.795);
-    border: 5px solid;
-    border-color: rgb(135, 182, 252);
-    padding: 50px;
-    max-width: 100px; 
-    max-height: 100px ;
-    margin-top: 15px;
-    list-style: none;
-    text-align: center;
-    font-variant: small-caps;
-    font-weight: bold;
-    margin-right: 25px;
-    flex: 1;
-    
-}
-
-#Nnarr {
-    display:flex;
-    
-}
-
-#Nhist li {
-
-    background-color: rgba(190, 221, 233, 0.795);
-    border: 5px solid;
-    border-color: rgb(135, 182, 252);
-    padding: 50px;
-    max-width: 100px; 
-    max-height: 100px ;
-    margin-top: 15px;
-    list-style: none;
-    text-align: center;
-    font-variant: small-caps;
-    font-weight: bold;
-    margin-right: 25px;
-    flex: 1;
-    
-}
-
-#Nhist {
-    display:flex;
-    
-}
-
-#interact{
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    
-    
-}
-
-#interact  td{
-   background-color: rgb(215, 215, 248);
-   padding: 10px;
- 
-  
-    
-
-    
-}
-
-#interagir{
-    text-align: center;
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-image: url('https://i2.wp.com/sitedosgeeks.com/wp-content/uploads/2019/01/1546961357_bandersnatch1921.jpg?fit=1921%2C1079&ssl=1');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-}
-
-
-table, th, td {
-  border: 2px solid  rgb(4, 55, 131);;
-}
-
-
-#imgFlux{
-    background-image: url('../images/BlackMirrorDiagram.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-  
-
-
-}
-
+        #logo {
+            max-width: 200px;
+            max-height: 100px
+        }
+        
+        .nav {
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+        
+        .nav-tabs .active a,
+        .nav-tabs .active a:hover {
+            background: #EFEFEF;
+        }
+        
+        #Nnarr li {
+            background-color: rgba(190, 221, 233, 0.795);
+            border: 5px solid;
+            border-color: rgb(135, 182, 252);
+            padding: 50px;
+            max-width: 100px;
+            max-height: 100px;
+            margin-top: 15px;
+            list-style: none;
+            text-align: center;
+            font-variant: small-caps;
+            font-weight: bold;
+            margin-right: 25px;
+            flex: 1;
+        }
+        
+        #Nnarr {
+            display: flex;
+        }
+        
+        #Nhist li {
+            background-color: rgba(190, 221, 233, 0.795);
+            border: 5px solid;
+            border-color: rgb(90, 116, 156);
+            padding: 50px;
+            max-width: 100px;
+            max-height: 100px;
+            margin-top: 15px;
+            list-style: none;
+            text-align: center;
+            font-variant: small-caps;
+            font-weight: bold;
+            margin-right: 25px;
+            flex: 1;
+        }
+        
+        #Nhist {
+            display: flex;
+        }
+        
+        #interact {
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+        }
+        
+        #interact td {
+            background-color: rgb(240, 248, 255);
+            padding: 10px;
+            font-family: 'Garamond', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+        
+        #interagir {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Garamond', 'Arial Narrow', Arial, sans-serif;
+            background-image: url('../images/fundoH.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+        
+        table,
+        th,
+        td {
+            border: 2px solid rgb(4, 55, 131);
+            ;
+        }
+        
+        #imgFlux {
+            background-image: url('../images/BlackMirrorDiagram.jpeg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+        
+        #nomeNA {
+            font-family: 'Garamond', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }

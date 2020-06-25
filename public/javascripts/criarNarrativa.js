@@ -221,13 +221,13 @@ function Passagemfilha() {
     cn = cn + 1
 
     f = f + 1
-    p = 130 + p
+    p = 200 + p
         //idec = sessionStorage.getItem('Ide');
 
     outputcon = sessionStorage.getItem('IdOutputcon')
         // add node 2
     if (f == 1) {
-        node2 = linker.node({ id: Math.random().toString(36).substr(2, 8), name: [cn] + 'ª Passagem', x: 400, y: p });
+        node2 = linker.node({ id: Math.random().toString(36).substr(2, 8), name: [cn] + 'ª Passagem', x: 400, y: 130 });
     }
     if (f != 1) {
 
@@ -323,8 +323,7 @@ function Passagemfilha() {
 function NomeNarrativa() {
     NarrNome = prompt("Insira o nome da narrativa", "Harry Potter");
     if (NarrNome != null) {
-        document.getElementById("savenarr").innerHTML =
-            "Criou a narrativa " + NarrNome + " :)";
+        document.getElementById("savenarr").innerHTML = "Criou a narrativa " + NarrNome + " :)";
         SalvarNarrativa()
     }
 }

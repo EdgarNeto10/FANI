@@ -28,7 +28,7 @@ module.exports.saveNarrativas = function(Narr_id_id, NomeNarrativa, personagem, 
             callback(err, { code: 500, status: "Error in the connection to the database" })
             return;
         }
-        conn.query('insert into Narrativa (Narr_id,Narr_id_id,Narr_nome,Narr_personagem, Narr_script, Narr_accao, Narr_out_id, Narr_outCon_id, Narr_X, Narr_Y) values(?,?,?,?,?,?,?,?,?)', [Narr_id_id, NomeNarrativa, personagem, script, accao, Narr_out_id, Narr_outCon_id, Narr_X, Narr_Y], function(err, results) {
+        conn.query('insert into Narrativa (Narr_id_id,Narr_nome,Narr_personagem, Narr_script, Narr_accao, Narr_out_id, Narr_outCon_id, Narr_X, Narr_Y) values(?,?,?,?,?,?,?,?,?)', [Narr_id_id, NomeNarrativa, personagem, script, accao, Narr_out_id, Narr_outCon_id, Narr_X, Narr_Y], function(err, results) {
 
             conn.release();
             if (err) {
