@@ -189,7 +189,7 @@ function updateNarr() {
         },
 
         success: function(res) {
-            alert('u')
+
         },
         error: function(err) {
             console.log(err);
