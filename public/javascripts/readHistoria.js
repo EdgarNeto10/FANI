@@ -49,7 +49,7 @@ function readHistorias() {
                     outId = listnarr[i].Narr_out_id
                 }
                 if (listnarr[i].Narr_outCon_id == outId) {
-                    htm += "<td style='cursor: pointer';  border-radius:50%' onclick='setIdPassagem(" + listnarr[i].Narr_id + ");' >" + listnarr[i].Narr_accao + "</td>";
+                    htm += "<td style='cursor: pointer ;border-radius:50%'; onclick='setIdPassagem(" + listnarr[i].Narr_id + ");' >" + listnarr[i].Narr_accao + "</td>";
                 }
             }
 
@@ -83,7 +83,7 @@ function setIdPassagem(Idpassagem) {
         if (listnarr[j].Narr_outCon_id == outIdd) {
             // alert(outIdd)
             // alert(listnarr[i].Narr_accao) <button type=button class='persNP'>" +listnarr[j].Narr_accao+ "</button>
-            htm += "<td style='cursor: pointer'; border-radius:50%' onclick='setIdPassagem(" + listnarr[j].Narr_id + ");' >" + listnarr[j].Narr_accao + "</td>";
+            htm += "<td style='cursor: pointer; border-radius:50%'; onclick='setIdPassagem(" + listnarr[j].Narr_id + ");' >" + listnarr[j].Narr_accao + "</td>";
         }
 
 
