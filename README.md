@@ -44,7 +44,7 @@ Sendo assim, a diferença da ferramenta FANI para com as que foram mencionadas a
 1. A seguir roteirista irá consultar a sequência da narrativa de acordo com as ações que o mesmo irá clicar no decorrer da narrativa;
 1. Por fim o roteirista irá clicar em sair da narrativa. 
 
-### Aceder e editar  narrativas narrativas criadas
+### Aceder e editar narrativas narrativas criadas
 
 1. Depois de realizar e guardar uma narrativa o roteirista irá para secção  “Suas Narrativa” ;
 1. Em seguida o roteirista Irá selecionar a passagem que pretende editar;
@@ -52,13 +52,14 @@ Sendo assim, a diferença da ferramenta FANI para com as que foram mencionadas a
 1. Por fim o roteirista irá clicar em  guardar alterações.
 
 
-## O projeto deverá ser desenvolvido nas  seguintes tecnologias :
+## O projeto foi desenvolvido nas seguintes tecnologias :
 
 •	JavaSricpt
 
 •	HTML/CSS
 
 •	Biblioteca Linker
+
 
 ## Interfaces Implementadas
 
@@ -77,6 +78,17 @@ Interface que permite o utlizador aceder a lista das suas narrativas criadas.
 ### Interação
 Interface que permite o utlizador interagir com as suas narrativas.
 ![Interação](https://user-images.githubusercontent.com/55880884/107055289-0a127000-67c9-11eb-8fe8-afeb197cdab9.png)
+
+
+## Block Diagam 
+![Block Diagram FANI](https://user-images.githubusercontent.com/55880884/107056796-a12bf780-67ca-11eb-9776-8d1772a10d3c.jpg)
+
+## Domain Model
+[Class diagram-FANI.pdf](https://github.com/EdgarNeto10/SustainableProducts/files/5933692/Class.diagram-FANI.pdf)
+
+## Use Case
+![UserCaseFANI](https://user-images.githubusercontent.com/55880884/107057225-22838a00-67cb-11eb-8fb2-05dce7cc27da.png)
+
 
 
 
