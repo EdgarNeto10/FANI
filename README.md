@@ -2,10 +2,17 @@ Titulo: FANI
 
 Participantes:
 
-Número:50035284
-Nome:Edgar Neto
+# FANI
+Ferramenta de Autoria de Narrativa Interativas 
 
-Enquadramento:
+## Autores:
+
+| Número | Nome |
+|--------|------|
+|  50035284  | Edgar Neto |
+
+
+## Enquadramento:
 
  
 Narrativa Interativa consiste em uma história que permite ao público decidir o seu rumo ao interagir com o artefacto de forma direta, através de botões, fala ou diferentes formas dependendo da mídia utilizada, é um tipo de narrativa muito comum em jogos digitais , mas também pode ser encontrada em outras mídias como teatro, literatura e cinema.
@@ -19,37 +26,37 @@ Sendo assim, a diferença da ferramenta FANI para com as que foram mencionadas a
 
 
 
-Cenário Principal:
+## Cenário Principal:
 
-Criar narrativas interativas
+### Criar narrativas interativas
 
-1.	Depois de logado, o roteirista irá para secção de criar narrativas;
-2.	Isto feito, o roteirista irá preencher o formulário ‘Escrever Narrativa’;
-3.	Depois o roteirista irá clicar em adicionar a passagem principal;
-4.	O sistema irá apresentar a passagem na interface;
-5.	Depois o roteirista irá  na passagem que criou e preencher novamente o formulário;
-6.	Isto feito roteirista irá clicar em adicionar passagem filha subjacente a passagem que clicou.
-7.	Depois o  roteirista poderá  clicar em  uma determinada passagem para mudar os seus dados e de seguida clicar no botão “Edit passagem”
-8.	Por fim o roteirista irá clicar em salvar a narrativa e depois atribuir um nome a mesma. 
+1. Depois de logado, o roteirista irá para secção de criar narrativas;
+1. Isto feito, o roteirista irá preencher o formulário ‘Escrever Narrativa’;
+1. Depois o roteirista irá clicar em adicionar a passagem principal;
+1. O sistema irá apresentar a passagem na interface;
+1. Depois o roteirista irá  na passagem que criou e preencher novamente o formulário;
+1. Isto feito roteirista irá clicar em adicionar passagem filha subjacente a passagem que clicou.
+1. Depois o  roteirista poderá  clicar em  uma determinada passagem para mudar os seus dados e de seguida clicar no botão “Edit passagem”
+1. Por fim o roteirista irá clicar em salvar a narrativa e depois atribuir um nome a mesma. 
 
-Cenários secundários:
+## Cenários secundários:
 
-Interagir com as narrativas interativas realizadas
+### Interagir com as narrativas interativas realizadas
 
-1.	Depois de realizar e guardar uma narrativa o roteirista irá para secção de histórias;
-2.	Isto feito, o roteirista irá clicar na narrativa que pretende ver;
-3.	A seguir roteirista irá consultar a sequência da narrativa de acordo com as ações que o mesmo irá clicar no decorrer da narrativa;
-4.	Por fim o roteirista irá clicar em sair da narrativa. 
+1. Depois de realizar e guardar uma narrativa o roteirista irá para secção de histórias;
+1. Isto feito, o roteirista irá clicar na narrativa que pretende ver;
+1. A seguir roteirista irá consultar a sequência da narrativa de acordo com as ações que o mesmo irá clicar no decorrer da narrativa;
+1. Por fim o roteirista irá clicar em sair da narrativa. 
 
-Aceder e editar  narrativas narrativas criadas
+### Aceder e editar  narrativas narrativas criadas
 
-1.	Depois de realizar e guardar uma narrativa o roteirista irá para secção  “Suas Narrativa” ;
-2.	Em seguida o roteirista Irá selecionar a passagem que pretende editar;
-3.	Clicará no botão “Editar passagem” e fazer as alterações que pretende;
-4.	Por fim o roteirista irá clicar em  guardar alterações.
+1. Depois de realizar e guardar uma narrativa o roteirista irá para secção  “Suas Narrativa” ;
+1. Em seguida o roteirista Irá selecionar a passagem que pretende editar;
+1. Clicará no botão “Editar passagem” e fazer as alterações que pretende;
+1. Por fim o roteirista irá clicar em  guardar alterações.
 
 
-O projeto deverá ser desenvolvido nas  seguintes tecnologias :
+## O projeto deverá ser desenvolvido nas  seguintes tecnologias :
 
 •	JavaSricpt
 
@@ -57,14 +64,20 @@ O projeto deverá ser desenvolvido nas  seguintes tecnologias :
 
 •	Biblioteca Linker
 
+## Interfaces Implementadas
+
+### Criar Narrativas
+![Narrativa](file:///Users/EdgarNeto/FANI/Mod.W.FANI/Interfaces%20FANI/Criar%20Narrativa.png)
 
 
-Referências:
+
+## Referências:
 
 •	[1] http://www.klynt.net/
 
 •	[2] http://korsakow.com/
 
 •	[3] https://racontr.com/
+
 
 
