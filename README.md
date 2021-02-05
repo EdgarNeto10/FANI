@@ -1,7 +1,3 @@
-Titulo: FANI
-
-Participantes:
-
 # FANI
 Ferramenta de Autoria de Narrativa Interativas 
 
@@ -67,7 +63,21 @@ Sendo assim, a diferença da ferramenta FANI para com as que foram mencionadas a
 ## Interfaces Implementadas
 
 ### Criar Narrativas
-![Narrativa](file:///Users/EdgarNeto/FANI/Mod.W.FANI/Interfaces%20FANI/Criar%20Narrativa.png)
+Interface que permite o utlizador criar as suas narrativas interativas.
+![Criar Narrativa](https://user-images.githubusercontent.com/55880884/107055021-bacc3f80-67c8-11eb-885c-aa37207804ba.png)
+
+### Estrutura Narrativa
+Interface que permite o utlizador aceder a estrutura de uma narrativa criada.
+![Estrutura Narrativa](https://user-images.githubusercontent.com/55880884/107055119-df281c00-67c8-11eb-8077-5d6c5fb8d1fb.png)
+
+### Lista de narrativas
+Interface que permite o utlizador aceder a lista das suas narrativas criadas.
+![Lista de narrativas](https://user-images.githubusercontent.com/55880884/107055277-067ee900-67c9-11eb-8945-3f590961107f.png)
+
+### Interação
+Interface que permite o utlizador interagir com as suas narrativas.
+![Interação](https://user-images.githubusercontent.com/55880884/107055289-0a127000-67c9-11eb-8fe8-afeb197cdab9.png)
+
 
 
 
@@ -78,6 +88,5 @@ Sendo assim, a diferença da ferramenta FANI para com as que foram mencionadas a
 •	[2] http://korsakow.com/
 
 •	[3] https://racontr.com/
-
 
 
