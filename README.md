@@ -80,11 +80,11 @@ Interface que permite o utlizador interagir com as suas narrativas.
 ![Interação](https://user-images.githubusercontent.com/55880884/107055289-0a127000-67c9-11eb-8fe8-afeb197cdab9.png)
 
 
-## Block Diagam 
+## Block Diagram 
 ![Block Diagram FANI](https://user-images.githubusercontent.com/55880884/107056796-a12bf780-67ca-11eb-9776-8d1772a10d3c.jpg)
 
 ## Domain Model
-[Class diagram-FANI.pdf](https://github.com/EdgarNeto10/SustainableProducts/files/5933692/Class.diagram-FANI.pdf)
+![ClassDiagramFANI](https://user-images.githubusercontent.com/55880884/107058154-29f76300-67cc-11eb-933b-bf6e9194f0cd.png)
 
 ## Use Case
 ![UserCaseFANI](https://user-images.githubusercontent.com/55880884/107057225-22838a00-67cb-11eb-8fb2-05dce7cc27da.png)
